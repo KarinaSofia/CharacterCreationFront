@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import { useEffect, useState } from 'react';
 import CharDisplay from './CharDisplay';
-import { ToastContainer, toast } from 'react-toastify';
 
 
 function CharList() {
@@ -16,7 +15,7 @@ function CharList() {
         const lastNameInput = e.target.elements.last_Name.value;
         const NickNameInput = e.target.elements.NickName.value;
         const ageInput = e.target.elements.age.value;
-        const birthdayInput = e.target.elements.Birthday.value; 
+        const birthdayInput = e.target.elements.Birthday.value;
         const genderInput = e.target.elements.Gender.value;
         const primaryPersonalityTraitInput = e.target.elements.primaryPersonalityTrait.value;
         const primaryAccessoryInput = e.target.elements.primaryAccessory.value;
@@ -83,19 +82,21 @@ function CharList() {
             })
     }
 
+
+
     /*  
    
        */
-
+    const [startDate, setStartDate] = useState(new Date());
 
     return (
         <div class="container">
             <div class="row" >
-            <div class="col-sm"> 
-                <h2 className='Header'>Character Creator</h2>
-                <hr></hr>
-            </div> 
-            
+                <div class="col-sm">
+                    <h2 className='Header'>Character Creator</h2>
+                    <hr></hr>
+                </div>
+
             </div>
             <div class="row">
                 <div class="col-sm">
@@ -105,7 +106,7 @@ function CharList() {
                             character.map((character) => (
                                 <li key={character.id}>
                                     <CharDisplay character={character}
-                                    deleteCharacter = {deleteCharacter}
+                                        deleteCharacter={deleteCharacter}
                                     >
 
                                     </CharDisplay>
@@ -117,26 +118,98 @@ function CharList() {
                 </div>
                 <div class="col-sm">
                     <h1>Create a new Character!</h1>
-                    <form onSubmit={handleSubmit}>
-                        <input type="text" required minLenght={1} name='firstName' placeholder="Enter first name..." />
-                        <input type="text" name='last_Name' placeholder="Enter last name..." />
-                        <input type="text" name='age' placeholder="Enter age..." />
-                        <input type="text" name='Birthday' placeholder="Enter birthday..." />
-                        <input type="text" name='NickName' placeholder="Enter nickname..." />
-                        <input type="text" name='Gender' placeholder="Enter gender..." />
-                        <input type="text" name='primaryPersonalityTrait' placeholder="Enter primaryPersonalityTrait..." />
-                        <input type="text" name='primaryAccessory' placeholder="Enter primaryAccessory..." />
-                        <input type="text" name='height' placeholder="Enter height..." />
-                        <input type="text" name='weight' placeholder="Enter weight..." />
-                        <input type="text" name='eyeColor' placeholder="Enter eyeColor..." />
-                        <input type="text" name='hairColor' placeholder="Enter hairColor..." />
-                        <input type="text" name='skinColor' placeholder="Enter skinColor..." />
-                        <input type="text" name='residence' placeholder="Enter residence..." />
-                        <input type="text" name='ethnicity' placeholder="Enter ethnicity..." />
-                        <input type="text" name='occupation' placeholder="Enter occupation..." />
 
-                        <button>Create</button>
+                <form onSubmit={handleSubmit}>
+                    <div class="row" >
+                        <div class="col-sm">
+                        <span> First name </span>
+                        <br></br>
+                        <input type="text" required minLenght={1} name='firstName' placeholder="Enter first name..." />
+                        <br></br>
+
+                         <span> Age </span>
+                         <br></br>
+                        <input type="text" name='age' placeholder="Enter age..." />
+                        <br></br>
+
+                        <span> NickName </span>
+                        <br></br>
+                        <input type="text" name='NickName' placeholder="Enter nickname..." />
+                        <br></br>
+
+                        <span> Personality </span>
+                        <br></br>
+                        <input type="text" name='primaryPersonalityTrait' placeholder="Enter personalities..." />
+                        <br></br>
+
+                        <span> Height </span>
+                        <br></br>
+                        <input type="text" name='height' placeholder="Enter height..." />
+                        <br></br>
+
+                        <span> Eye Color </span>
+                        <br></br>
+                        <input type="text" name='eyeColor' placeholder="Enter eyeColor..." />
+                        <br></br>
+
+                        <span> skinColor </span>
+                        <br></br>
+                        <input type="text" name='skinColor' placeholder="Enter skinColor..." />
+                        <br></br>
+
+                        <span> Ethnicity </span>
+                        <br></br>
+                        <input type="text" name='ethnicity' placeholder="Enter ethnicity..." />
+                        <br></br>
+                        </div>
+
+
+                        <div class="col-sm">
+                            <span> Last name </span>
+                            <br></br>
+                        <input type="text" name='last_Name' placeholder="Enter last name..." />
+                        <br></br>
+
+                        <span> Birthday </span>
+                        <br></br>
+                        <input type="text" name='Birthday' placeholder="Enter birthday..." />
+                        <br></br>
+
+                        <span> Gender </span>
+                        <br></br>
+                        <input type="text" name='Gender' placeholder="Enter gender..." />
+                        <br></br>
+
+                        <span> Accessories </span>
+                        <br></br>
+                        <input type="text" name='primaryAccessory' placeholder="Enter accessories..." />
+                        <br></br>
+
+                        <span> Weight </span>
+                        <br></br>
+                        <input type="text" name='weight' placeholder="Enter weight..." />
+                        <br></br>
+
+                        <span> Hair Color </span>
+                        <br></br>
+                        <input type="text" name='hairColor' placeholder="Enter hairColor..." />
+                        <br></br>
+
+                        <span> Residence </span>
+                        <br></br>
+                        <input type="text" name='residence' placeholder="Enter residence..." />
+                        <br></br>
+
+                        <span> Occupation </span>
+                        <br></br>
+                        <input type="text" name='occupation' placeholder="Enter occupation..." />
+                        <br></br>
+                        </div>
+                    </div>
+                    <br></br>
+                    <button>Create</button>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -144,33 +217,5 @@ function CharList() {
     )
 }
 
-/*
-<ul>
-              {
-                todos.map((item) => (
-                  <li>
-                    <ToDoItem key={item.id}
-                      item={item}
-                      setComplete={setComplete}
-                      deleteItem={deleteItem}
-                    ></ToDoItem>
-                  </li>
-                ))
-              }
-            </ul>
-
-            <ul>
-                        {
-                            character.map((char) => (
-                                <li key={char.id}>
-                                    <CharDisplay char={character}>
-
-                                    </CharDisplay>
-                                </li>
-                            ))
-                            
-                        }
-                    </ul>
-*/
 
 export default CharList;
