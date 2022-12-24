@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios"; 
 import { useEffect, useState } from 'react';
+import CharDisplay from './CharDisplay';
 
 
 
@@ -12,10 +13,10 @@ function CharList() {
 
         e.preventDefault();
         const firstNameInput= e.target.elements.firstName.value;
-        const lastNameInput= e.target.elements.lastName.value;
-        const nickNameInput= e.target.elements.nickname.value;
+        const lastNameInput= e.target.elements.last_Name.value;
+        const NickNameInput= e.target.elements.NickName.value;
         const ageInput= e.target.elements.age.value; 
-        const genderInput= e.target.elements.gender.value;
+        const genderInput= e.target.elements.Gender.value;
         const primaryPersonalityTraitInput= e.target.elements.primaryPersonalityTrait.value;
         const primaryAccessoryInput= e.target.elements.primaryAccessory.value; 
         const heightInput= e.target.elements.height.value;
@@ -29,10 +30,10 @@ function CharList() {
         
         addCharacter({ 
             firstName : firstNameInput, 
-            lastName : lastNameInput,
-            nickname : nickNameInput,
+            last_Name : lastNameInput,
+            NickName : NickNameInput,
             age : ageInput,
-            gender : genderInput,
+            Gender : genderInput,
             primaryPersonalityTrait : primaryPersonalityTraitInput,
             primaryAccessory : primaryAccessoryInput,
             height : heightInput,
@@ -79,7 +80,7 @@ function CharList() {
         console.log(error);
       })
       }
-      
+
  /*  
 
     */
@@ -92,15 +93,64 @@ function CharList() {
             </div>
             <div class="row">
                 <div class="col-sm">
-                    <h1>character list</h1>
+                    <h1>My characters</h1>
+                    
                 </div>
                 <div class="col-sm">
-                    <h1>submit</h1>
+                    <h1>Create a new Character!</h1>
+                    <form onSubmit={handleSubmit}>
+                     <input type="text" required minLenght={1} name='firstName' placeholder="Enter first name..." />
+                     <input type="text" name='last_Name' placeholder="Enter last name..." />
+                     <input type="text" name='age' placeholder="Enter age..." />
+                     <input type="text" name='NickName' placeholder="Enter nickname..." />
+                     <input type="text" name='Gender' placeholder="Enter gender..." />
+                     <input type="text" name='primaryPersonalityTrait' placeholder="Enter primaryPersonalityTrait..." />
+                     <input type="text" name='primaryAccessory' placeholder="Enter primaryAccessory..." />
+                     <input type="text" name='height' placeholder="Enter height..." />
+                     <input type="text" name='weight' placeholder="Enter weight..." />
+                     <input type="text" name='eyeColor' placeholder="Enter eyeColor..." />
+                     <input type="text" name='hairColor' placeholder="Enter hairColor..." />
+                     <input type="text" name='skinColor' placeholder="Enter skinColor..." />
+                     <input type="text" name='residence' placeholder="Enter residence..." />
+                     <input type="text" name='ethnicity' placeholder="Enter ethnicity..." />
+                     <input type="text" name='occupation' placeholder="Enter occupation..." />
+
+                     <button>Submit</button>
+            </form>
                 </div>
             </div>
         </div>
 
     )
 }
+
+/*
+<ul>
+              {
+                todos.map((item) => (
+                  <li>
+                    <ToDoItem key={item.id}
+                      item={item}
+                      setComplete={setComplete}
+                      deleteItem={deleteItem}
+                    ></ToDoItem>
+                  </li>
+                ))
+              }
+            </ul>
+
+            <ul>
+                        {
+                            character.map((char) => (
+                                <li key={char.id}>
+                                    <CharDisplay char={character}>
+
+                                    </CharDisplay>
+                                </li>
+                            ))
+                            
+                        }
+                    </ul>
+*/
 
 export default CharList;
