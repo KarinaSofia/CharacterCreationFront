@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios"; 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
 
 
 function CharList() {
@@ -50,7 +51,7 @@ function CharList() {
         axios.get("http://localhost:8081/api/characters")
         .then(function (response) {
             const allItems = response.data;
-            setTodos(allItems);
+            setCharacters(allItems);
           })
           .catch(function (error) {
             console.log(error);
@@ -68,8 +69,19 @@ function CharList() {
       }
 
       useEffect(() => { loadCharactersFromAPI(); }, [])
+
+      const deleteCharacter = (id) => {
+        axios.delete("http://localhost:8081/api/characters/" + id)
+        .then(function (response) {
+            loadCharactersFromAPI();
+        })
+        .catch(function (error) {
+        console.log(error);
+      })
+      }
+      
  /*  
-   
+
     */
 
     return (
