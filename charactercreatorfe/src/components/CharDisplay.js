@@ -40,6 +40,8 @@ function CharDisplay({ character, deleteCharacter,}) {
                         <br></br>
                         <span>Occupation: </span>{character.occupation}
                         <br></br>
+                        <span>Favorited: </span>{character.fav}
+                        <br></br>
                     </div>
                     <div class="col-sm">
                         <button className="delete" onClick={() => { deleteCharacter(character.id) }}>delete Character</button>
