@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios"; 
+import { useState } from 'react';
 
 
 function CharList() {
@@ -7,6 +8,7 @@ function CharList() {
     const [character, setCharacters] = useState([]);
 
     const handleSubmit = (e) => {
+
         e.preventDefault();
         const firstNameInput= e.target.elements.firstName.value;
         const lastNameInput= e.target.elements.lastName.value;
@@ -24,7 +26,23 @@ function CharList() {
         const ethnicityInput= e.target.elements.ethnicity.value;
         const occupationInput= e.target.elements.occupation.value; 
         
-        addItem({ title : input1, description : input2})
+        addCharacter({ 
+            firstName : firstNameInput, 
+            lastName : lastNameInput,
+            nickname : nickNameInput,
+            age : ageInput,
+            gender : genderInput,
+            primaryPersonalityTrait : primaryPersonalityTraitInput,
+            primaryAccessory : primaryAccessoryInput,
+            height : heightInput,
+            weight : weightInput,
+            eyeColor : eyeColorInput,
+            hairColor : hairColorInput,
+            skinColor : skinColorInput,
+            residence : residenceInput, 
+            ethnicity : ethnicityInput,
+            occupation : occupationInput
+        })
     
       }
 
