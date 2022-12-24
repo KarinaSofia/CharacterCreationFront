@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function CharDisplay({ character, deleteCharacter,}) {
+function CharDisplay({ character, deleteCharacter, setFav}) {
 
 
     return (
@@ -46,6 +46,8 @@ function CharDisplay({ character, deleteCharacter,}) {
                     <div class="col-sm">
                         <button className="delete" onClick={() => { deleteCharacter(character.id) }}>delete Character</button>
                         <br></br>
+                        <br></br>
+                        <button className="Fav" onClick={() => { setFav((character.id, !character.fav))}}>Favorite Character</button>
                         
                     </div>
                 </div>

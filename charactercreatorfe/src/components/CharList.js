@@ -70,6 +70,22 @@ function CharList() {
             })
     }
 
+    const setFav = (id, Fav) => {
+
+        axios.put("http://localhost:8081/api/characters/" + id, {
+          Fav: Fav
+        })
+    
+          .then(function (response) {
+            loadCharactersFromAPI();
+    
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+    
+    
+      }
 
 
     useEffect(() => { loadCharactersFromAPI(); }, [])
@@ -106,6 +122,7 @@ function CharList() {
                                 <li key={character.id}>
                                     <CharDisplay character={character}
                                         deleteCharacter={deleteCharacter}
+                                        setFav={setFav}
                                     >
 
                                     </CharDisplay>
