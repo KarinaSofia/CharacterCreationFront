@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function CharDisplay({ character, deleteCharacter }) {
+function CharDisplay({ character, deleteCharacter,}) {
+
 
     return (
         <div className="CharacterBlock">
@@ -38,9 +39,12 @@ function CharDisplay({ character, deleteCharacter }) {
                         <span>Ethnicity: </span>{character.ethnicity}
                         <br></br>
                         <span>Occupation: </span>{character.occupation}
+                        <br></br>
                     </div>
                     <div class="col-sm">
-                    <button className="delete" onClick={() => { deleteCharacter(character.id) }}>delete Character</button>
+                        <button className="delete" onClick={() => { deleteCharacter(character.id) }}>delete Character</button>
+                        <br></br>
+                        
                     </div>
                 </div>
             </div>

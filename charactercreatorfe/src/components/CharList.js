@@ -70,6 +70,8 @@ function CharList() {
             })
     }
 
+
+
     useEffect(() => { loadCharactersFromAPI(); }, [])
 
     const deleteCharacter = (id) => {
@@ -82,12 +84,9 @@ function CharList() {
             })
     }
 
-
-
-    /*  
-   
-       */
-    const [startDate, setStartDate] = useState(new Date());
+    
+    
+      
 
     return (
         <div class="container">
@@ -161,6 +160,7 @@ function CharList() {
                         <br></br>
                         <input type="text" name='ethnicity' placeholder="Enter ethnicity..." />
                         <br></br>
+
                         </div>
 
 
