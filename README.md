@@ -19,6 +19,38 @@ Front-End
 ## Backend Endpoints
 ![image](https://user-images.githubusercontent.com/104159293/209453782-a9beb774-948b-40bb-b940-052339f3ce1a.png)
 
+### Character
+```
+{
+    "first_Name": "julia",
+    "last_Name": "Test",
+    "age": 17,
+    "primaryPersonalityTrait": "Nice",
+    "primaryAccessory": "Neckless",
+    "height": "150cm",
+    "weight": "120",
+    "eyeColor": "Brown",
+    "hairColor": "Blue",
+    "skinColor": "Pale",
+    "residence": "Montreal",
+    "ethnicity": "Italian",
+    "occupation": "Student",
+    "nickName": "Jo",
+    "gender": "F",
+    "birthday": "December 24th"
+}
+```
+
+### Story
+```
+{
+    "id": 3,
+    "name": "HTTYD",
+    "genre": "Fantasy",
+    "desc": "Dragons and Vikings"
+}
+```
+
 ### Charcter Creation Tool
 ![image](https://user-images.githubusercontent.com/104159293/209453038-a3c6ea38-2671-41ba-890d-8d73ee39c00c.png)
 
