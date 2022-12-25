@@ -14,11 +14,11 @@ function CharDisplay({ character, deleteCharacter, setFav}) {
                         <br></br>
                         <span>Age: </span> {character.age}
                         <br></br>
-                        <span>Birthday: </span> {character.Birthday}
+                        <span>Birthday: </span> {character.birthday}
                         <br></br>
-                        <span>Nickname: </span>{character.NickName}
+                        <span>Nickname: </span>{character.nickName}
                         <br></br>
-                        <span>Gender: </span>{character.Gender}
+                        <span>Gender: </span>{character.gender}
                         <br></br>
                         <span>Personality: </span>{character.primaryPersonalityTrait}
                         <br></br>

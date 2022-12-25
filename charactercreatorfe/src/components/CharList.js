@@ -163,14 +163,14 @@ function CharList() {
                         <input type="text" name='height' placeholder="Enter height..." />
                         <br></br>
 
-                        <span> Eye Color </span>
+                        <span> Eye color </span>
                         <br></br>
-                        <input type="text" name='eyeColor' placeholder="Enter eyeColor..." />
+                        <input type="text" name='eyeColor' placeholder="Enter eye color..." />
                         <br></br>
 
-                        <span> skinColor </span>
+                        <span> Skin color </span>
                         <br></br>
-                        <input type="text" name='skinColor' placeholder="Enter skinColor..." />
+                        <input type="text" name='skinColor' placeholder="Enter skin color..." />
                         <br></br>
 
                         <span> Ethnicity </span>
@@ -207,9 +207,9 @@ function CharList() {
                         <input type="text" name='weight' placeholder="Enter weight..." />
                         <br></br>
 
-                        <span> Hair Color </span>
+                        <span> Hair color </span>
                         <br></br>
-                        <input type="text" name='hairColor' placeholder="Enter hairColor..." />
+                        <input type="text" name='hairColor' placeholder="Enter hair color..." />
                         <br></br>
 
                         <span> Residence </span>
