@@ -13,6 +13,12 @@ Front-End
 
   Classes in this program mainly deal with handling the axios requests. Each of the List components have get classes, put classes and delete classes. While it is not impossible for StoryList to have a post request, I choose to only have the CharList have a post request. The get request and Put requests were used mainly in the List components. The get was used to display all current characters and or stories whereas the Put request was used to create the character/stories. The Delete class was put in the display component as to clearly visualise which character/ story was being deleted. The delete class would accept the Character or story id it was currently assigned to and promptly do the function should it be pressed. The single Post request is being used to set the favorited Characters. In the future, the post endpoint will receive another class which will enable full character edits. 
 
+*Goal Database Design*
+![image](https://user-images.githubusercontent.com/104159293/209453763-b332b1b6-186c-4f5e-9c0a-41d93cf45bdf.png)
+
+## Backend Endpoints
+![image](https://user-images.githubusercontent.com/104159293/209453782-a9beb774-948b-40bb-b940-052339f3ce1a.png)
+
 ### Charcter Creation Tool
 ![image](https://user-images.githubusercontent.com/104159293/209453038-a3c6ea38-2671-41ba-890d-8d73ee39c00c.png)
 
